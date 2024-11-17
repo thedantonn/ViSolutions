@@ -1,0 +1,1 @@
+export const ViSolutions_LOGO = "https://download.logo.wine/logo/Stack_Overflow/Stack_Overflow-Logo.wine.png"
