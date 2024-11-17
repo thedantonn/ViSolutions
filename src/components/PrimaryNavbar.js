@@ -19,9 +19,9 @@ const PrimaryNavbar = () => {
     }
   return (
     <div>
-        <ul className='h-14 border-2 border-black flex justify-between items-center pl-16 pr-24'>
-            <li className='hover:bg-slate-300'><img
-            className='w-56 h-32'
+        <ul className='h-14 border-b-2 border-gray-300 pb-2 flex justify-between items-center pl-20 pr-24'>
+            <li className=''><img
+            className='w-40 h-12  hover:bg-slate-300'
             src={ViSolutions_LOGO} 
             alt="ViSolutionsLOGO"/></li>
             <li className='hover:bg-slate-300 hover:rounded-full p-2'>Products</li>
