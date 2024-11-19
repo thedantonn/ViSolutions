@@ -11,7 +11,7 @@ import { BiMessageDetail } from "react-icons/bi";
 
 const SecondaryNavbar = () => {
   return (
-    <div className='flex flex-col w-44 border-r-2 ml-16 px-3'>
+    <div className='absolute h-full flex flex-col w-44 border-r-2 ml-16 px-3'>
         <div className='flex flex-col items-start py-6 '>
             <h1 className='flex items-center text-center font-semibold text-sm hover:bg-gray-100 w-full p-1'><IoMdHome className='text-2xl mr-2'/>Home</h1>
             <h1 className='flex items-center text-center font-semibold text-sm hover:bg-gray-100 w-full p-1'><RiQuestionnaireFill className='text-xl mr-2'/>Questions</h1>

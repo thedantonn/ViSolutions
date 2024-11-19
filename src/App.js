@@ -1,11 +1,24 @@
+import { Provider } from 'react-redux';
 import './App.css';
-import HeaderPage from './pages/HeaderPage';
-
+import QuestionPage from './pages/QuestionPage';
+import {createBrowserRouter, RouterProvider } from 'react-router-dom'
+import appStore from './utils/appStore';
 function App() {
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <QuestionPage/>
+    },
+  ],
+  {
+    future: {
+      v7_skipActionErrorRevalidation: true,
+    },}
+  )
   return (
-    <div className="App">
-      <HeaderPage/>
-    </div>
+    <Provider store = {appStore}>
+      <RouterProvider router={appRouter}/>
+    </Provider>
   );
 }
 
