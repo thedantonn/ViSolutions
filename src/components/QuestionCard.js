@@ -42,32 +42,3 @@ const QuestionCard = ({title,tags,answer_count,name,icon,reputation,views,userLi
 }
 
 export default QuestionCard
-/*<div className='pl-[74px] ml-auto w-10/12 flex border-t-2 border-gray-200'>
-      <ul className=' w-1/12 flex flex-col space-y-1 p-2 text-right text-sm'>
-        <li>{} votes</li>
-        <li>{answer_count} answers</li>
-        <li>{views} views</li>
-      </ul>
-
-      <div className='pl-4 text-left'>
-        <h1 className='text-blue-500 text-xl font-normal'>{title}</h1>
-        <p className='text-gray-500 text-sm'>description</p>
-      </div>
-      
-      <div className='flex items-center text-center'>
-          <ul className='flex space-x-2'>
-            {tags.map((tag) => (
-              <li className='border-2 text-sm bg-gray-200 p-1  font-bold'>
-                {tag}
-                </li>))}
-            
-          </ul>
-          <ul className='flex'>
-            <img className='text-blue-700 w-8' src={icon} alt='icon'/>
-            <li className='text-blue-700 text-xs'><Link to={link}>{name}</Link></li>
-            <li className='text-gray-800 font-bold text-xs'>{reputation}</li>
-            <li className='text-gray-400 text-xs'>time</li>
-          </ul>
-        </div>
-    </div>
-  )*/

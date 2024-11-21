@@ -7,7 +7,7 @@ const Blog = () => {
   return (
     <div className='flex-col'>
     <div className='flex justify-end'>
-    <div className='absolute pr-20 w-3/12 py-6' >
+    <div className='absolute pr-20 w-3/12 py-6 space-y-5' >
     <div className='border-x-2 border-b-2 border-amber-400 rounded-md'>
         <div className='my-2 bg-amber-50'>
             <h1 className='text-[13px] font-bold border-y-2  border-amber-400 bg-amber-100 p-3'>The Overflow Blog</h1>
@@ -31,15 +31,13 @@ const Blog = () => {
                 <p className='flex text-[13px] pl-3 pr-1 pt-2 space-y-3 my-2  bg-amber-50'>36 Can Discussions be saved ?</p>
             </div>
 
-        </div>
-        
+    </div>
+    <div className='' >
+        <h1 className='text-lg font-bold pb-3 ml-2'>Custom Filter</h1>
+        <p className=' border-2 text-center p-2 text-blue-500'>add custom filter</p>
     </div>
     </div>
-    <div className='absolute pr-20 w-3/12 py-6' >
-        <h1>Custom Filters</h1>
-        <p>Create a custom filter</p>
     </div>
-    <div>hi</div>
     </div>
   )
 }

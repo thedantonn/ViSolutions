@@ -4,6 +4,7 @@ import questionsReducer from "../slice/questionsSlice"
 const appStore = configureStore({
     reducer : {
         questions: questionsReducer,
+        
     }
 })
 
