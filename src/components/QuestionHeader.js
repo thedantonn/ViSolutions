@@ -20,7 +20,7 @@ const QuestionHeader = () => {
             <h1 className='text-3xl'>Top Question</h1>
         </div>
         <div className='md:flex justify-between relative w-8/12 space-y-4'>
-           <div className='flex text-sm items-center '>
+           <div className=' flex  text-sm items-center'>
            <button className={`px-5 py-2 text-[15px] rounded-full ${filter === "activity" ? "bg-orange-500 text-white" : "hover:bg-orange-200 text-gray-400 font-semibold"}`} onClick={()=>handleFilter("activity")}>Interesting</button>
            <button className={`px-5 py-2 text-[15px] rounded-full ${filter === "votes" ? "bg-orange-500 text-white" : "hover:bg-orange-200 text-gray-400 font-semibold"}`} onClick={()=>handleFilter("votes")}>Bountied</button>
             <button className={`px-5 py-2 text-[15px] rounded-full ${filter === "hot" ? "bg-orange-500 text-white" : "hover:bg-orange-200 text-gray-400 font-semibold"}`} onClick={()=>handleFilter("hot")}>Hot</button>
