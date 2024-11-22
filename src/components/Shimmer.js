@@ -1,6 +1,7 @@
 import React from 'react'
 import QuestionCard from './QuestionCard'
 import QuestionHeader from './QuestionHeader'
+import Blog from './Blog'
 
 
 const Shimmer = () => {
@@ -14,6 +15,7 @@ const Shimmer = () => {
         <QuestionCard/>
         <QuestionCard/>
         <QuestionCard/>
+        <Blog/>
     </div>
   )
 }

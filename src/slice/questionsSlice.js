@@ -10,10 +10,7 @@ const questionsSlice = createSlice({
         isSearch:false
     },
     reducers:{
-        addQuestions : (state,action) => {
-            state.Questions =  action.payload
-        },
-        addHotQuestions : (state,action) => {
+        addFilterQuestions : (state,action) => {
             state.filterQuestions = action.payload
         },
         addfilter : (state,action) => {
@@ -29,5 +26,5 @@ const questionsSlice = createSlice({
     }
 })
 
-export const {addQuestions,addHotQuestions,addfilter,addSearchedQuestion,isSearch} = questionsSlice.actions
+export const {addFilterQuestions,addfilter,addSearchedQuestion,isSearch} = questionsSlice.actions
 export default questionsSlice.reducer

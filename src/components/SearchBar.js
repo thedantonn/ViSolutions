@@ -1,6 +1,7 @@
 import React, {useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addSearchedQuestion,isSearch } from '../slice/questionsSlice'
+import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 
 const SearchBar = () => {
         const dispatch = useDispatch()
@@ -29,12 +30,15 @@ const SearchBar = () => {
                 },300)
         }
         return (
+                <div className='flex border-2 border-gray-300 rounded-full px-3'>
                 <input
-                className='h-8 p-3 border-2 border-gray-300 rounded-md w-full text-xs'
+                className='p-3 rounded-full w-full text-[14px] font-semibold'
                 type='search'
                 value={searchInput}
-                placeholder={`🔍 Search...`}
+                placeholder={`Search Your Answers Here...`}
                 onChange={handleSearchInput}/>
+                <button><HiOutlineMagnifyingGlass size={25} className='text-orange-500'/></button>
+                </div>
         )
 }
 

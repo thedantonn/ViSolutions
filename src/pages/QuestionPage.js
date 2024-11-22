@@ -1,11 +1,10 @@
 import HeaderPage from "./HeaderPage"
 import QuestionCard from '../components/QuestionCard'
 import { useSelector } from 'react-redux'
-import useQuestions from "../hooks/useQuestions"
 import QuestionHeader from "../components/QuestionHeader"
 import ShimmerPage from "./ShimmerPage"
 import Blog from "../components/Blog"
-import useHotQuestions from "../hooks/useHotQuestions"
+import useHotQuestions from "../hooks/useFilterQuestions"
 
 
 
@@ -16,16 +15,15 @@ const QuestionPage = () => {
   const isSearch = useSelector((store) => store?.questions?.isSearch)
 
     
-  return questions === null ? (<ShimmerPage/>) :
+  return !questions ? (<ShimmerPage/>) :
   (
     <div>
       <HeaderPage/>
-      <Blog/>
       <QuestionHeader/>
-
       {isSearch === true ?  
-      (searchedquestions?.map((question) => (
+      (searchedquestions?.map((question,index) => (
         <QuestionCard 
+        key={index}
         title={question?.title}
         answer_count={question?.answer_count}
         tags ={question?.tags}
@@ -38,8 +36,9 @@ const QuestionPage = () => {
         />
 
       ))) : 
-      (questions?.map((question) => (
+      (questions?.map((question,index) => (
         <QuestionCard 
+        key={index}
         title={question?.title}
         answer_count={question?.answer_count}
         tags ={question?.tags}
@@ -53,6 +52,7 @@ const QuestionPage = () => {
 
       ))) 
     }
+    <Blog/>
     </div>
   )
 }

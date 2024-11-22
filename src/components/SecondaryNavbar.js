@@ -1,55 +1,68 @@
-import React from 'react'
-import { FaInfoCircle } from "react-icons/fa";
-import { IoMdHome,IoMdPricetags,IoMdBriefcase } from "react-icons/io";
-import { RiQuestionnaireFill } from "react-icons/ri";
-import { MdLabel } from "react-icons/md";
-import { HiMiniUsers } from "react-icons/hi2";
-import { PiBuildingOfficeFill } from "react-icons/pi";
-import { BiMessageDetail } from "react-icons/bi";
+import React, { useState } from 'react'
+import { RiHomeLine } from "react-icons/ri"
+import { PiGlobeHemisphereWest } from "react-icons/pi";
+import { IoStarOutline } from "react-icons/io5";
+import { SlBriefcase } from "react-icons/sl";
+import { HiOutlineUsers, HiXMark } from "react-icons/hi2";
+import { RxHamburgerMenu } from "react-icons/rx";
+
 
 
 
 const SecondaryNavbar = () => {
+    const [isMenuOpen,setIsMenuOpen] = useState(false)
+    const closeMenu = () => setIsMenuOpen(!isMenuOpen)
+  
   return (
-    <div className='absolute h-full flex flex-col w-44 border-r-2 ml-16 px-3'>
-        <div className='flex flex-col items-start py-6 '>
-            <h1 className='flex items-center text-center font-semibold text-sm hover:bg-gray-100 w-full p-1'><IoMdHome className='text-2xl mr-2'/>Home</h1>
-            <h1 className='flex items-center text-center font-semibold text-sm hover:bg-gray-100 w-full p-1'><RiQuestionnaireFill className='text-xl mr-2'/>Questions</h1>
-            <h1 className='flex items-center text-center font-semibold text-sm hover:bg-gray-100 w-full p-1'><IoMdPricetags className='text-xl mr-2'/>Tags</h1>
-        </div>
-        <div className='flex flex-col items-start pb-6'>
-            <h1 className='flex items-center text-center font-semibold text-sm hover:bg-gray-100 w-full p-1'><MdLabel className='text-2xl mr-2'/>Saves</h1>
-            <h1 className='flex items-center text-center font-semibold text-sm hover:bg-gray-100 w-full p-1'><HiMiniUsers className='text-2xl mr-2'/>Users</h1>
-            <h1 className='flex items-center text-center font-semibold text-sm hover:bg-gray-100 w-full p-1'><PiBuildingOfficeFill className='text-2xl mr-2'/>Companies</h1>
-        </div>
-        <div className='flex flex-col items-start'> 
-            <div className='flex w-full space-y-2 items-center'>
-                <h1 className='w-11/12 text-left text-[12px] font-bold'>LABS</h1>
-                <FaInfoCircle className='items-right text-sm text-gray-500'/>
-            </div>
-            <div className='pb-6'>
-                <h1 className='flex items-center text-center font-semibold text-sm hover:bg-gray-100 w-full p-1'><IoMdBriefcase className='text-2xl mr-2'/>Jobs</h1>
-                <h1 className='flex items-center text-center font-semibold text-sm hover:bg-gray-100 w-full p-1'><BiMessageDetail className='text-2xl mr-2'/>Discussions</h1>   
-        </div>
-        </div>
-        <div className='flex flex-col items-start pb-6'>
-            <div className='flex w-full items-center text-center pb-2'>
-                <h1 className='w-1/2 text-left text-[12px] font-bold'>COLLECTIVES</h1>
-                <h1 className='w-6/12 text-right'> + </h1>
-            </div>
-            <p className='text-gray-500 font-semibold text-[10px] text-start'>Communities for your favorite technologies.</p> 
-            <p className='underline font-semibold text-[10px] text-start'>Explore all Collectives</p>
-        </div>
-        <div className='flex flex-col items-start pb-6'>
-            <div className='flex w-full items-center text-center pb-2'>
-                <h1 className='w-1/2 text-left text-[12px] font-bold'>TEAMS</h1>
-                <h1 className='w-6/12 text-right'> + </h1>
-            </div>
-           <div className='text-gray-500 font-semibold text-[10px] text-start'>
-           <p >Ask questions, find answers and collaborate at work with Stack Overflow for Teams. <span className='underline text-black'>Explore Teams</span></p>
-           <p><span className='underline text-black'>Looking for your Teams?</span></p>
-           </div>
-        </div>
+    <div className='absolute'>
+      <button
+        className="block lg:hidden text-3xl text-gray-600 pl-4 md:-mt-14 -mt-11"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        {isMenuOpen ? <HiXMark/> : <RxHamburgerMenu/>}
+      </button>
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-20 md:hidden"
+          onClick={closeMenu}
+        ></div>
+      )}
+      <div className={`z-10 absolute bg-white w-52 shadow-md transition-transform duration-300 md:relative lg:translate-x-0 md:shadow-none ${
+      isMenuOpen ? "translate-x-0" : "-translate-x-full"
+    }`}>
+      <ul className="flex flex-col py-6 ">
+        <li className="flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 px-8">
+          <RiHomeLine className="text-2xl mr-2 text-orange-500" />
+          Home
+        </li>
+      </ul>
+
+        <ul className='flex flex-col items-start pb-6'>
+            <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full px-8 py-2'><PiGlobeHemisphereWest className='text-2xl mr-2 text-orange-500'/>PUBLIC</li>
+            <li className="flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 pl-16">Questions</li>
+            <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 pl-16'>Tags</li>
+            <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 pl-16'>Users</li>
+        </ul>
+
+        <ul className='flex flex-col items-start pb-6'>
+            <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full px-8 py-2'><IoStarOutline className='text-2xl mr-2 text-orange-500'/>COLLECTIVES</li>
+            <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 pl-16 '>Explore Jobs</li>
+
+        </ul>
+
+        <ul className='flex flex-col items-start pb-6'>
+            <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full px-8 py-2'><SlBriefcase className='text-2xl mr-2 text-orange-500'/>FIND JOBS</li>
+            <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 pl-16 '>Jobs</li>
+            <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 pl-16'>Companies</li>
+            
+        </ul>
+
+        <ul className='flex flex-col items-start pb-6'>
+            <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full px-8 py-2'><HiOutlineUsers className='text-2xl mr-2 text-orange-500'/>TEAMS</li>
+            <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 pl-16'>+ Create a team</li>
+           
+        </ul>
+       </div> 
     </div>
   )
 }

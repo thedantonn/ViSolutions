@@ -1,38 +1,33 @@
-import React, { useState } from 'react'
-import { IoMdArrowDropdown } from 'react-icons/io';
-import { IoFilterSharp } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
 import { addfilter, isSearch } from '../slice/questionsSlice';
-import useHotQuestions from '../hooks/useHotQuestions';
+import useHotQuestions from '../hooks/useFilterQuestions';
+import { useState } from "react";
 
 const QuestionHeader = () => {
-  const [filter,setfilter] = useState('')
+  const [filter,setfilter] = useState('activity')
   const dispatch = useDispatch()
 
   const handleFilter = (newFilter) => {
     setfilter(newFilter)
     dispatch(addfilter(newFilter))
-    console.log(newFilter)
     dispatch(isSearch(false))
   }
   
   useHotQuestions(filter)
   return (
-    <div className='ml-auto w-10/12 flex flex-col space-y-4 border-r-2 px-6 py-6'>
-        <div className='flex justify-between w-8/12 items-center text-center ml-6'>
-            <h1 className='text-3xl'>All Questions</h1>
-            <button className='px-3 py-2 text-white font-semibold bg-blue-500 text-sm rounded-md'>Ask Question</button>
+    <div className='xl:ml-56 lg:ml-52 xl:w-10/12 lg:w-9/12 w-full flex relative flex-col space-y-4 px-4 py-6'>
+        <div className='flex justify-between items-center'>
+            <h1 className='text-3xl'>Top Question</h1>
         </div>
-        <div className='flex ml-6 items-center'>
-            <h1 className='mr-32 text-xl font-light '>24,241,646 questions</h1>
-           <div className='flex mr-3 border-2 rounded-md p-1 text-sm items-center '>
-            <button className='px-2 py-1 hover:bg-gray-100 hover:rounded-md' onClick={()=>handleFilter("hot")}>Hot</button>
-            <button className='px-2 py-1 hover:bg-gray-100 hover:rounded-md' onClick={()=>handleFilter("week")}>Week</button>
-            <button className='px-2 py-1 hover:bg-gray-100 hover:rounded-md' onClick={()=>handleFilter("month")}>Month</button>
-            <button className='px-2 py-1 hover:bg-gray-100 hover:rounded-md' onClick={()=>handleFilter("bountied")}>Bountied</button>
-            <button className='px-2 py-1 hover:bg-gray-100 hover:rounded-md flex items-center'>More<IoMdArrowDropdown/></button>
+        <div className='md:flex justify-between relative w-8/12 space-y-4'>
+           <div className='flex text-sm items-center '>
+           <button className={`px-5 py-2 text-[15px] rounded-full ${filter === "activity" ? "bg-orange-500 text-white" : "hover:bg-orange-200 text-gray-400 font-semibold"}`} onClick={()=>handleFilter("activity")}>Interesting</button>
+           <button className={`px-5 py-2 text-[15px] rounded-full ${filter === "votes" ? "bg-orange-500 text-white" : "hover:bg-orange-200 text-gray-400 font-semibold"}`} onClick={()=>handleFilter("votes")}>Bountied</button>
+            <button className={`px-5 py-2 text-[15px] rounded-full ${filter === "hot" ? "bg-orange-500 text-white" : "hover:bg-orange-200 text-gray-400 font-semibold"}`} onClick={()=>handleFilter("hot")}>Hot</button>
+            <button className={`px-5 py-2 text-[15px] rounded-full ${filter === "week" ? "bg-orange-500 text-white" : "hover:bg-orange-200 text-gray-400 font-semibold"}`} onClick={()=>handleFilter("week")}>Week</button>
+            <button className={`px-5 py-2 text-[15px] rounded-full ${filter === "month" ? "bg-orange-500 text-white" : "hover:bg-orange-200 text-gray-400 font-semibold"}`} onClick={()=>handleFilter("month")}>Month</button>
            </div>
-           <button className='p-2 border-2 rounded-md hover:bg-blue-200 text-blue-600 border-blue-600 flex items-center text-sm'><IoFilterSharp className='mr-2'/>Filter</button>
+           <button className='xl:px-8 md:px-3 px-2 text-white py-2 xl:text-[15px] lg:text-[12px] md:text-[12px] text-[11px] whitespace-nowrap rounded-full font-semibold bg-blue-500'>ASK QUESTIONS</button>
         </div>
     </div>
   )
