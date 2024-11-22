@@ -7,11 +7,11 @@ const QuestionCard = ({title,tags,answer_count,name,icon,reputation,views,userLi
   
 
   return (
-    <div className='flex xl:ml-56 lg:ml-56 xl:w-7/12 lg:w-6/12 md:w-8/12 md:ml-5 shadow-lg hover:border-2 hover:border-orange-500'>
+    <div className='flex lg:ml-56 ml-8 xl:w-7/12 lg:w-6/12 md:w-8/12 w-full md:ml-5 shadow-lg hover:border-2 hover:border-orange-500'>
       <div className='p-4 w-full space-y-6'>
-      <h1 className='text-gray-500 lg:2xl md:text-xl text-[18px] font-semibold'><Link to={questionLink}>{title || `Question Are Loading Soon, if it isn't coming try switching your network as API request might be overloaded`}</Link></h1>
+      <h1 className='text-gray-500 lg:2xl md:text-xl text-[16px] font-semibold'><Link to={questionLink}>{title || `Question Are Loading Soon, if it isn't coming try switching your network as API request might be overloaded`}</Link></h1>
 
-      <div className='flex justify-between '>
+      <div className='flex justify-between'>
         {tags ? (<ul className='flex space-x-3 overflow-y-scroll'>
             {tags.map((tag,index) => (
               <li key={index} className=' md:text-sm text-[12px] rounded-full px-3 py-1 border-2 font-semibold whitespace-nowrap'>
