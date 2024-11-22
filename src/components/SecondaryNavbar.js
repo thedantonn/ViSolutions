@@ -12,6 +12,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 const SecondaryNavbar = () => {
     const [isMenuOpen,setIsMenuOpen] = useState(false)
     const closeMenu = () => setIsMenuOpen(!isMenuOpen)
+
   
   return (
     <div className='absolute'>
@@ -39,7 +40,7 @@ const SecondaryNavbar = () => {
 
         <ul className='flex flex-col items-start pb-6'>
             <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full px-8 py-2'><PiGlobeHemisphereWest className='text-2xl mr-2 text-orange-500'/>PUBLIC</li>
-            <li className="flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 pl-16">Questions</li>
+            <li className="flex items-center font-semibold text-sm bg-orange-100 border-r-4 border-orange-500 w-full py-2 pl-16">Questions</li>
             <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 pl-16'>Tags</li>
             <li className='flex items-center font-semibold text-sm hover:bg-orange-100 hover:border-r-4 hover:border-orange-500 w-full py-2 pl-16'>Users</li>
         </ul>
