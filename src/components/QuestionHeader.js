@@ -27,7 +27,7 @@ const QuestionHeader = () => {
             <button className={`px-5 py-2 text-[15px] rounded-full ${filter === "week" ? "bg-orange-500 text-white" : "hover:bg-orange-200 text-gray-400 font-semibold"}`} onClick={()=>handleFilter("week")}>Week</button>
             <button className={`px-5 py-2 text-[15px] rounded-full ${filter === "month" ? "bg-orange-500 text-white" : "hover:bg-orange-200 text-gray-400 font-semibold"}`} onClick={()=>handleFilter("month")}>Month</button>
            </div>
-           <button className='xl:px-8 md:px-3 px-2 text-white py-2 xl:text-[15px] lg:text-[12px] md:text-[12px] text-[11px] whitespace-nowrap rounded-full font-semibold bg-blue-500'>ASK QUESTIONS</button>
+           <button className='xl:px-8 lg:px-3 md:px-3 px-2 text-white py-2 xl:text-[15px] lg:text-[12px] md:text-[10px] text-[11px] rounded-full font-semibold bg-blue-500'>ASK QUESTIONS</button>
         </div>
     </div>
   )

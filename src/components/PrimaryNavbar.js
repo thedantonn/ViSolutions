@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ViSolutions_LOGO } from '../constants'
+import { PROFILE_LOGO, USER_DEFAULT_ICON, ViSolutions_LOGO } from '../utils/constants'
 import { BiMessageAltDetail } from "react-icons/bi";
 import { GiPlagueDoctorProfile } from "react-icons/gi";
 import { LuTrophy,LuMessageSquare } from "react-icons/lu";
@@ -44,7 +44,7 @@ const PrimaryNavbar = () => {
             <li className='hover:bg-slate-300'><LuMessageSquare className='text-3xl  text-gray-400'/></li>
             <li className='hover:bg-slate-300'><LuTrophy className='text-3xl text-gray-400'/></li>
             <li className='hover:bg-slate-300'><BiMessageAltDetail className='text-3xl text-gray-400'/></li>
-            <li className='hover:bg-slate-300 border-2 w-fit rounded-full border-black bg-orange-500'><GiPlagueDoctorProfile className='text-3xl  text-white'/></li>
+            <li className='hover:bg-slate-300 border-4 w-11 rounded-full border-orange-400'><img src={PROFILE_LOGO} className='rounded-full' alt='user'/></li>
         </ul>
     </div>
   )

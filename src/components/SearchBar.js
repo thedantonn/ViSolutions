@@ -32,12 +32,12 @@ const SearchBar = () => {
         return (
                 <div className='flex border-2 border-gray-300 rounded-full px-3'>
                 <input
-                className='p-3 rounded-full w-full text-[14px] font-semibold'
+                className='p-3 rounded-full w-full text-[16px] focus:outline-none'
                 type='search'
                 value={searchInput}
                 placeholder={`Search Your Answers Here...`}
                 onChange={handleSearchInput}/>
-                <button><HiOutlineMagnifyingGlass size={25} className='text-orange-500'/></button>
+                <button className='cursor-text'><HiOutlineMagnifyingGlass size={25} className='text-orange-500'/></button>
                 </div>
         )
 }

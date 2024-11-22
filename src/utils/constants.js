@@ -1,0 +1,3 @@
+export const ViSolutions_LOGO = "https://www.cdnlogo.com/logos/s/57/stack-overflow-wordmark.svg"
+export const USER_DEFAULT_ICON = "https://thumbs.dreamstime.com/b/octopus-logo-marine-cartoon-animal-pixel-style-blue-squid-decor-minimal-game-216471453.jpg"
+export const PROFILE_LOGO = "https://media-ccu1-1.cdn.whatsapp.net/v/t61.24694-24/437115567_2248471702160614_2628383679233296960_n.jpg?ccb=11-4&oh=01_Q5AaIHSG3alOT8mr7Ql5TZsrRz89xivEhy0OA-BOgeCUPKw8&oe=674DB2BA&_nc_sid=5e03e0&_nc_cat=109"
